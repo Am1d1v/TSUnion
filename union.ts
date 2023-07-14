@@ -62,6 +62,8 @@ fetchWithAuthNumbers('someUrl', 1);
 
 // Type Aliases
 
+/*
+
 type httpMethod = 'post' | 'get';
 
 function fetchWithAuth(url: string, method: httpMethod){
@@ -82,6 +84,27 @@ type Role = {
 }
 
 type UserWithRole = User & Role;
+
+let user: UserWithRole = {
+    name: 'someName',
+    age: 20,
+    skills: ['skillOne', 'skillTwo'],
+    id: 10
+};
+
+*/
+
+// Interfaces
+
+interface User {
+    name: string,
+    age: number,
+    skills: string[] 
+};
+
+interface UserWithRole extends User {
+    id: number
+} 
 
 let user: UserWithRole = {
     name: 'someName',
