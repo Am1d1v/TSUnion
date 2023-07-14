@@ -44,6 +44,9 @@ function logMultIds(a: string | number, b: string | number){
 
 // Literal Types
 
+
+/*
+
 function fetchWithAuth(url: string, method: 'post' | 'get'){
 
 }
@@ -53,3 +56,29 @@ function fetchWithAuthNumbers(url: string, method: 1 | 2){
     console.log(url);
 }
 fetchWithAuthNumbers('someUrl', 1);
+
+*/
+
+
+// Type Aliases
+
+type httpMethod = 'post' | 'get';
+
+function fetchWithAuth(url: string, method: httpMethod){
+
+}
+fetchWithAuth('someUrl', 'post');
+
+
+
+type User = {
+    name: string,
+    age: number,
+    skills: string[]
+};
+
+let user: User = {
+    name: 'someName',
+    age: 20,
+    skills: ['skillOne', 'skillTwo']
+};
