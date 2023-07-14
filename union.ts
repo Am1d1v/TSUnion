@@ -100,6 +100,8 @@ interface User {
     name: string,
     age: number,
     skills: string[] 
+
+    log: (id: number) => string;
 };
 
 interface UserWithRole extends User {
@@ -110,5 +112,13 @@ let user: UserWithRole = {
     name: 'someName',
     age: 20,
     skills: ['skillOne', 'skillTwo'],
-    id: 10
+    id: 10,
+
+    log(id){
+        return '';
+    }
 };
+
+interface UserDictionary {
+    [index: number]: User
+}
