@@ -3,6 +3,8 @@
 
 // Union
 
+/*
+
 function logId(id: string | number | boolean){
     if(typeof id === 'string'){
         console.log('Some String');
@@ -37,3 +39,17 @@ function logMultIds(a: string | number, b: string | number){
 
     }
 }
+
+*/
+
+// Literal Types
+
+function fetchWithAuth(url: string, method: 'post' | 'get'){
+
+}
+fetchWithAuth('someUrl', 'post');
+
+function fetchWithAuthNumbers(url: string, method: 1 | 2){
+    console.log(url);
+}
+fetchWithAuthNumbers('someUrl', 1);
