@@ -77,8 +77,15 @@ type User = {
     skills: string[]
 };
 
-let user: User = {
+type Role = {
+    id: number
+}
+
+type UserWithRole = User & Role;
+
+let user: UserWithRole = {
     name: 'someName',
     age: 20,
-    skills: ['skillOne', 'skillTwo']
+    skills: ['skillOne', 'skillTwo'],
+    id: 10
 };
