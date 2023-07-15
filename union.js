@@ -1,5 +1,14 @@
 "use strict";
 // Union
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 /*
 
 function logId(id: string | number | boolean){
@@ -160,21 +169,71 @@ function test(param?: string){
 
 */
 // Void 
-function logIn(id) {
+/*
+
+function logIn(id: string | number): void{
     console.log(id);
 }
+
 const a = logIn(1);
-function mult(f, s) {
-    if (!s) {
+
+
+function mult(f: number, s?: number): number | void {
+    if(!s){
         return f * f;
     }
 }
-const f1 = () => {
-};
+
+type voidFunction = () => void;
+
+const f1: voidFunction = () => {
+
+}
 const b = f1();
+
+
 const arr = ['one', 'two', 'three'];
+
 const user = {
     num: ['s']
-};
+}
+
 arr.forEach((element) => user.num.push(element));
 console.log(user.num);
+
+*/
+// Unknown
+let input;
+input = 3;
+//let res: string = input;  // Error, type any || unknown
+function run(i) {
+    if (typeof i === 'number') {
+        i++;
+    }
+    else {
+        console.log(i);
+    }
+}
+run(input);
+function getData() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            yield fetch('');
+        }
+        catch (error) {
+            if (error instanceof Error) {
+                console.error(error);
+            }
+        }
+    });
+}
+function getDataForce() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            yield fetch('');
+        }
+        catch (error) {
+            const e = error;
+        }
+    });
+}

@@ -178,6 +178,8 @@ function test(param?: string){
 
 // Void 
 
+/*
+
 function logIn(id: string | number): void{
     console.log(id);
 }
@@ -207,3 +209,47 @@ const user = {
 
 arr.forEach((element) => user.num.push(element));
 console.log(user.num);
+
+*/
+
+
+// Unknown
+
+let input: unknown;
+
+input = 3;
+
+//let res: string = input;  // Error, type any || unknown
+
+function run(i: unknown){
+    if(typeof i === 'number'){
+        i++;
+    } else {
+        console.log(i);
+    }
+}
+
+run(input);
+
+
+    async function getData(){
+        try {
+            await fetch('');
+        } catch(error){
+            if(error instanceof Error){
+                console.error(error);
+            }
+            
+        }
+    }
+
+
+    async function getDataForce(){
+        try {
+            await fetch('');
+        } catch(error){
+            const e = error as Error;
+            
+        }
+    }
+
