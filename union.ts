@@ -131,6 +131,8 @@ interface UserDictionary {
 
 // Optinal
 
+/*
+
 interface User {
     login: string,
     password?: string
@@ -170,3 +172,38 @@ function testPassword(user: UserPro){
 function test(param?: string){
     const t = param ?? multiply(5);
 }
+
+*/
+
+
+// Void 
+
+function logIn(id: string | number): void{
+    console.log(id);
+}
+
+const a = logIn(1);
+
+
+function mult(f: number, s?: number): number | void {
+    if(!s){
+        return f * f;
+    }
+}
+
+type voidFunction = () => void;
+
+const f1: voidFunction = () => {
+
+}
+const b = f1();
+
+
+const arr = ['one', 'two', 'three'];
+
+const user = {
+    num: ['s']
+}
+
+arr.forEach((element) => user.num.push(element));
+console.log(user.num);
