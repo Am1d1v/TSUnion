@@ -253,3 +253,26 @@ run(input);
         }
     }
 
+
+type U1 =  unknown | null; // Always unknown
+
+type I1 = unknown & string; // string
+
+
+// Never
+
+function generateError(message: string): never{
+    throw new Error(message);
+}
+
+function dumpError(): never{
+    while(true){
+
+    }
+}
+
+function rec(): never{
+   return rec();
+}
+
+//const a: never = 1;   //Error
