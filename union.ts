@@ -296,3 +296,17 @@ function processAction(action: paymentAction){
     }
            
 processAction('refund');
+
+
+
+
+
+function isString(par: string | number, ):boolean{
+    if(typeof par === 'string'){
+        return true;
+    } else if (typeof par === 'number') {
+        return false;
+    }
+
+    generateError('Error');
+}
