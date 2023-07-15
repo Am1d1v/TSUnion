@@ -96,6 +96,8 @@ let user: UserWithRole = {
 
 // Interfaces
 
+/*
+
 interface User {
     name: string,
     age: number,
@@ -121,4 +123,50 @@ let user: UserWithRole = {
 
 interface UserDictionary {
     [index: number]: User
+}
+
+*/
+
+
+
+// Optinal
+
+interface User {
+    login: string,
+    password?: string
+}
+
+const user: User = {
+    login: 'a@a.com',
+    //password: '123'
+}
+
+
+
+function multiply(first: number, second?: number):number{
+    if(!second){
+        return first * first;
+    } else {
+        return first * second;
+    }
+    
+}
+
+multiply(4);
+
+
+
+interface UserPro {
+    login: string,
+    password?:{
+        type: 'primary' | 'secondary'
+    }; 
+}
+
+function testPassword(user: UserPro){
+    const t = user.password?.type;
+}
+
+function test(param?: string){
+    const t = param ?? multiply(5);
 }
