@@ -276,3 +276,23 @@ function rec(): never{
 }
 
 //const a: never = 1;   //Error
+
+
+type paymentAction = 'refund' | 'checkout';
+
+function processAction(action: paymentAction){
+    switch(action){
+        case 'refund':
+            console.log('refund Completed');
+            break;
+
+        case 'checkout':
+            console.log('checkout Completed');
+            break;
+
+        default:
+            console.error('Wrong Action');    
+        }
+    }
+           
+processAction('refund');

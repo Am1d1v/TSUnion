@@ -248,4 +248,16 @@ function dumpError() {
 function rec() {
     return rec();
 }
-//const a: never = 1;   //Error
+function processAction(action) {
+    switch (action) {
+        case 'refund':
+            console.log('refund Completed');
+            break;
+        case 'checkout':
+            console.log('checkout Completed');
+            break;
+        default:
+            console.error('Wrong Action');
+    }
+}
+processAction('refund');
